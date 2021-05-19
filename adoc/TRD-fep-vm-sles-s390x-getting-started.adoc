@@ -134,7 +134,7 @@ the configuration described below which is used to install and run the KVM VM.
 
 == Configuration of the virtual machine
 
-The goal of this chapter is to successfully install SLES 12 SP5.  To accomplish this the VM will be started and the autoyast installation will automatically begin.
+The goal of this chapter is to successfully install SLES 12 SP5.  To accomplish this the VM is started and the autoyast installation begins automatically.
 
 Complete the following steps to install and configure the SLES 12 SP5 KVM guest:
 
@@ -146,40 +146,36 @@ The automated installation is configured to stop at the "Installation Settings" 
 
 The following options are configured during the automated installation (for more information, review the fep-autoyast.xml file):
 
-vda (25 GB):
+* vda (25 GB):
+** vda1:
+*** Size: 200 MB
+*** Directory: /boot/zipl
+*** Filesystem: ext2
+** vda2:
+*** Size: 4 GB
+*** Directory: swap
+** vda3:
+*** Size: Remainder of the disk
+*** Directory: /
+*** Filesystem: btrfs
 
-* vda1:
-** Size: 200 MB
-** Directory: /boot/zipl
-** Filesystem: ext2
-* vda2:
-** Size: 4 GB
-** Directory: swap
-* vda3:
-** Size: Remainder of the disk
-** Directory: /
-** Filesystem: btrfs
+* vdb (25 GB):
+** vdb1:
+*** Size: Full disk partition
+*** Directory: /database
+*** Filesystem: xfs
 
-vdb (25 GB):
+* vdc (25 GB):
+** vdc1:
+*** Size: Full disk partition
+*** Directory: /dbtranslg
+*** Filesystem: xfs
 
-* vdb1:
-** Size: Full disk partition
-** Directory: /database
-** Filesystem: xfs
-
-vdc (25 GB):
-
-* vdc1:
-** Size: Full disk partition
-** Directory: /dbtranslg
-** Filesystem: xfs
-
-vdd (25 GB):
-
-* vdd1:
-** Size: Full disk partition
-** Directory: /dbbackup
-** Filesystem: xfs
+* vdd (25 GB):
+** vdd1:
+*** Size: Full disk partition
+*** Directory: /dbbackup
+*** Filesystem: xfs
 
 * eth0: none
 * Patterns:
@@ -197,23 +193,34 @@ vdd (25 GB):
 ** java-1_8_0-openjdk
 
 * Initial root user password is set to *password*
+
 * Creation of a fsepuser as the DB administrator with password set to *password*
 
-. Restart the virtual server by using the following command to complete phase 2 of the automated installation:
+
+2. Restart the virtual server by using the following command to complete phase 2 of the automated installation:
+
  virsh start fep --console
+
 
 NOTE: You can safely ignore any postfix warnings or errors that appear in the console.
 
-. Use YaST to configure the host name, static IP address, and other networking information for the VM.
-. Log out and press Ctrl+] (Ctrl key plus the right square bracket) to disconnect from the console.
-. Use SSH to connect to the system and complete the remaining steps.
-. Apply all available SLES updates by running the following command:
+
+3. Use YaST to configure the host name, static IP address, and other networking information for the VM.
+
+4. Log out and press *Ctrl+]* (Ctrl key plus the right square bracket) to disconnect from the console.
+
+5. Use SSH to connect to the system and complete the remaining steps.
+
+6. Apply all available SLES updates by running the following command:
+
  zypper patch
 
-NOTE:  Be sure that SLES is registered to the SUSE Customer Center (SCC), a local
+This command should be run twice. The first run updates the zypper stack and the second run applies all available updates.
+
+NOTE: Be sure that SLES is registered to the SUSE Customer Center (SCC), a local
 Subscription Management Tool (SMT), or local Repository Mirroring Tool (RMT) server.
-This command should be run twice. The first run updates the zypper stack and the
-second run applies all available updates.
+
+
 
 == Installation of FEP
 

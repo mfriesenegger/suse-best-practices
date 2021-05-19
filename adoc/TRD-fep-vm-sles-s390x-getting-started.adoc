@@ -131,6 +131,7 @@ the configuration described below which is used to install and run the KVM VM.
 * The installation media is an ISO on the KVM host:
 ** /var/lib/libvirt/images/isos/SLE-12-SP5-Server-DVD-s390x-GM-DVD1.iso
 
+
 == Configuration of the virtual machine
 
 The goal of this chapter is to successfully install SLES 12 SP5.  To accomplish this the VM will be started and the autoyast installation will automatically begin.

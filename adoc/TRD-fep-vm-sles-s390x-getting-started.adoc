@@ -65,7 +65,7 @@ Combining IBM Z and LinuxONE with SLES and Fujitsu Enterprise Postgres (FEP), de
 
 == Prerequisites
 
-The following environment was used for verification purposes (your environment might be different):
+The following environment is used for this document (your environment might be different):
 
 * IBM Z KVM host running in an LPAR:
 ** Four IBM Integrated Facility for Linux (IFL) processors
@@ -78,6 +78,7 @@ The following environment was used for verification purposes (your environment m
 *** OSA 1 (eth0) is for SSH connections to the KVM host and for VEPA-based devices for VMs
 *** OSA 2 (eth1) is optional, but can be used for VEPA-based devices for VMs
 * A workstation with a web browser and ssh client will be needed.
+
 
 == Creation of the hypervisor host
 

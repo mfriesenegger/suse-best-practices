@@ -51,16 +51,17 @@ This document describes the following:
 
 Starting with the hardware, IBM Z and LinuxONE systems are ideal platforms for sensitive data and critical applications.  Several built-in hardware features help to protect data at rest and in-flight from internal and external threats.
 
-SUSE Linux Enterprise Server for IBM Z and LinuxONE the open source components that surface the hardware capabilities in IBM Z and LinuxONE as well as bring key open source technologies to the platform.  For example, Kernel-based Virtual Machine (KVM) is an open source virtualization technology included in SLES for IBM Z and LinuxONE.  Some of the benefits of KVM include:
+SUSE Linux Enterprise Server for IBM Z and LinuxONE delivers the open source components that surface the hardware capabilities and bring key open source technologies to the platform.  For example, Kernel-based Virtual Machine (KVM) is an open source virtualization technology included in SLES for IBM Z and LinuxONE.  Some of the benefits of KVM include:
 
 * It is a mature, virtualization technology - part of the Linux kernel since 2007.
 * It is available across platforms, enabling the use of the same tooling on x86, S/390, POWER, ARM, and so on.
-* Being kernel-level yields performance advantages.
+* It is kernel-level, yielding performance advantages.
 * It is well-known, allowing you to take advantage of existing skills and familiar tooling, like virsh.
 
-The hardware and operating system come together to support the application which in this case is Fujitsu Enterprise Postgres (FEP) which is the focus on this getting started guide.
 
-Combining IBM Z and LinuxONE with SLES for IBM Z and LinuxONE and FEP provide organizations a mission critical and highly secure environment to run many virtual instances of enterprise Postgres for development, test, quality assurance and most importantly production.
+Combining IBM Z and LinuxONE with SLES and Fujitsu Enterprise Postgres (FEP), delivers a highly secure, agile data platform for mission-critical applications and enables organizations to create full DevOps pipelines with secure, virtual environments for development, testing, quality assurance, and, of course, production.
+
+
 
 == Prerequisites
 

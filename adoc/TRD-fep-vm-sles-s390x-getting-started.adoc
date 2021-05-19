@@ -214,10 +214,11 @@ DB administrator user password:: *password*
 
 [start=2]
 . Restart the virtual server by using the following command to complete phase 2 of the automated installation:
-
++
+----
  virsh start fep --console
-
-
+----
++
 NOTE: You can safely ignore any postfix warnings or errors that appear in the console.
 
 [start=3]
@@ -242,20 +243,23 @@ Subscription Management Tool (SMT), or local Repository Mirroring Tool (RMT) ser
 
 == Installation of FEP
 
-The goal of this chapter is to successfully install FEP.  The FEP 12 installation iso will be mounted, the FEP 12 RPM installed and the setup utility for WebAdmin run.
+Now that the virtual machine is provisioned, FEP can be installed.
 
 Complete the following steps to install the FEP RPM packages and enable FEP WebAdmin.  Refer to the https://www.postgresql.fastware.com/resources-fujitsu-enterprise-postgres-optimised-for-ibm-linuxone[Resources - FUJITSU Enterprise Postgres 12 on IBM LinuxONE™] page for detailed installation and configuration instructions.
 
 . Copy the FEP installation ISO to /root
+
 . Mount the FEP installation ISO to /mnt
 
   mount /root/fsep12_ae_linux64.iso /mnt
 
 . Use zypper to install the FEP server and WebAdmin
-
++
+----
  zypper in /mnt/SERVER/Linux/packages/SUSE12s390x/FJSVfsep-SV-12-1200-0.s390x.rpm \
  /mnt/WEBADMIN/Linux/packages/SUSE12s390x/FJSVfsep-WAD-12-1200-0.s390x.rpm
-
+----
++
 NOTE: Ignore the "Signature verification failed" warning because the packages are not signed.
 
 . Change to /opt/fsepv<x>webadmin/sbin and execute WebAdminSetup
@@ -266,8 +270,11 @@ NOTE: Ignore the "Signature verification failed" warning because the packages ar
 . Accept the default port numbers for the:
   * Web Server (27515)
   * Internal port number for WebAdmin (27516)
+
 . Answer "yes" for WebAdmin autostart
-  * NOTE: The systemctl service name for FEP 12 is FSEPWAD_120_WA_64.service
++
+NOTE: The systemctl service name for FEP 12 is FSEPWAD_120_WA_64.service
+
 
 == Verification by creating a test database with FEP WebAdmin
 

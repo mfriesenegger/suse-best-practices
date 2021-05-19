@@ -272,21 +272,28 @@ NOTE: Ignore the "Signature verification failed" warning because the packages ar
   * Internal port number for WebAdmin (27516)
 
 . Answer "yes" for WebAdmin autostart
-+
+
+
 NOTE: The systemctl service name for FEP 12 is FSEPWAD_120_WA_64.service
 
 
 == Verification by creating a test database with FEP WebAdmin
 
-Complete the following steps to create a test database to confirm that FEP has been installed and running correctly.
+Complete the following steps to create a test database to confirm that FEP has been installed and is running correctly.
 
 . Open a web browser
-. Go to the hostname or IP address and port number of the FEP WebAdmin server
- http://<hostname or IP address>:27515
+
+. Go to the hostname or IP address and port number of the FEP WebAdmin server:
+ \http://<hostname or IP address>:27515
+
 . Select "Launch WebAdmin"
+
 . Use *fsepuser* to authenticate
-  * NOTE: The default password is *password*
++
+NOTE: The default password is *password*.
+
 . Click the "+" symbol to create a database
+
 . Use the information below to complete the fields
   * Configuration type: Standalone configuration
   * Server product type: FUJITSU Enterprise Postgres 12
@@ -299,21 +306,27 @@ Complete the following steps to create a test database to confirm that FEP has b
   * Transaction log path: /dbtranslg/dbtest
   * Encoding: UTF8
   * WAL file size (MB): <leave blank>
-. Click the check-mark icon to create the database
-. Click "Close" when the database instance has been created sucessfully
-. If you see the screen below then you have successfully created your first FEP database!
 
+. Click the check-mark icon to create the database
+
+. Click "Close" when the database instance has been created sucessfully
+
+. If you see the screen below then you have successfully created your first FEP database!
++
 image::fep-s390x-dbtest-created.png[Successfully created test database,scaledwidth="100%", align="center"]
+
 
 == Summary
 
-This getting started guide has been an introduction to deploying Fujitsu Enterprise Postgres on SUSE Linux Enterprise Server using KVM virtual machines on an IBM Z or LinuxONE system.  Automation has been used to simplify the deployment of SLES in a KVM virtual machine althogh this can be done manually.
+This getting started guide has been an introduction to deploying Fujitsu Enterprise Postgres on SUSE Linux Enterprise Server using KVM virtual machines on an IBM Z or LinuxONE system.  Automation has been used to simplify the deployment of SLES in a KVM virtual machine.
+
 
 == Additional resources
 
 For more information, visit:
 
-*	Data serving with Fujitsu Enterprise Postgres 12 on LinuxONE (currently draft IBM Redbooks publication)[https://www.redbooks.ibm.com/redpieces/abstracts/sg248499.html?Open]
+Data serving with Fujitsu Enterprise Postgres 12 on LinuxONE (currently draft IBM Redbooks publication)[https://www.redbooks.ibm.com/redpieces/abstracts/sg248499.html?Open].
+
 
 == Appendix A
 
@@ -672,6 +685,7 @@ chown
   </scripts>
 </profile>
 ....
+
 
 == Appendix B
 

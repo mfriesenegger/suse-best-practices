@@ -29,7 +29,7 @@ IBM Z and LinuxONE systems are an enterprise-class, purpose-built, data serving 
 
 == High-level overview
 
-This document guides a administrator through installation of Fujitsu Enterprise Postgres (FEP) 12 on a SUSE Linux Enterprise Server (SLES) 12 SP5, leveraging automation to reduce the time required to deploy both SLES and FEP.
+This document guides an administrator through installation of Fujitsu Enterprise Postgres (FEP) 12 on a SUSE Linux Enterprise Server (SLES) 12 SP5, leveraging automation to reduce the time required to deploy both SLES and FEP.
 It is written using SLES on s390x (IBM Z and LinuxONE) as a KVM virtual machine.
 But these steps can be applied to the installation of FEP on SLES for any supported architecture (x86_64, ppc64le, and s390x), whether on physical hardware or in a virtual machine.
 
